@@ -33,7 +33,7 @@ def _(obj):
 @create_hash.register(np.int64)
 @create_hash.register(int)
 def _(obj):
-    return create_hash(np.int64(obj).tobytes())
+    return create_hash(str(obj).encode('utf8'))
 
 @create_hash.register(np.float64)
 @create_hash.register(float)
